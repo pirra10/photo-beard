@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emperador Barbudo App</title>
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/cropper.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <style>
+    .container {
+      max-width: 960px;
+      margin: 20px auto;
+    }
+    .img-container {
+      width: 100%;
+      margin-top: 10px;
+    }
+    .img-container img {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <span class="title"><a href="http://www.emperadorbarbudo.com">Tienda en línea</a></span>
+    <div class="menu">
+<!--  <label for="file" title="Upload"  class="menu__button">
+        <span class="fa fa-upload"></span>
+      </label> -->
+      <button id="emperadorbarbudo" title="Tienda en línea"  class="menu__button">
+        <span class="fa fa-shopping-cart"></span>
+      </button>
+      <button id="undo-btn-crop" title="Deshacer"  class="menu__button">
+        <span class="fa fa-undo"></span>
+      </button>
+      <button id="go-home" title="Inicio"  class="menu__button">
+        <span class="fa fa-home"></span>
+      </button>
+      <button title="Borrar" class="menu__button menu__button--danger">
+        <span class="fa fa-trash"></span>
+      </button>
+      <button id="cancel-btn-crop"  title="Cancelar" class="menu__button menu__button--danger">
+        <span class="fa fa-ban">
+        </span>
+      </button>
+      <button id="ok-btn-crop" title="OK" class="menu__button menu__button--success">
+        <span class="fa fa-check"></span>
+      </button>
+      <button id="ok-btn-beard" title="Elije Barba" class="menu__button menu__button--success">
+        <img src="img/beard-icon.png" width="20" height="20">
+      </button>
+      <div id="select-beard" class="btn-group" style="display:none">
+        <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img width="25" height="25" src="img/icon-beard.png" /> <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-right"></ul>
+      </div>
+      <!-- <select class="bs-button bs-accessory bs-prompt" disabled><option value="">Choose Beard &raquo;</option></select> -->
+<!--       <button data-action="select" title="Select Beard type" class="menu__button">
+        <span class="fa fa-check"></span>
+      </button>
+      <button data-action="facebook" title="Share" class="menu__button menu__button--success">
+        <span class="fa fa-facebook-official"></span>
+      </button>
+      <button data-action="link" title="URL" class="menu__button menu__button--success">
+        <span class="fa fa-link"></span>
+      </button> -->
+      <a id="download" href="#" title="Download" class="menu__button menu__button--success">
+        <span class="fa fa-download"></span>
+      </a>
+    </div>
+  </header>
+    <main class="main">
+    <div class="spinner" style="display: none"><img src="img/loading.gif" width="42" height="42" /></div>
+      <div id="canvas">
+      <div class="img-logo">
+      <img class="logo" src="img/emperador-barbudo.png" /></div>
+	    <div class="fileUpload btn btn-black">	      
+	      <span><span class="fa fa-picture-o"></span> Elije una foto o tómate una</span>
+	      <input type='file' id="imgInp" name="file" class="upload"/>
+	    </div>
+	    <div style="display: none" class="camBtn btn btn-black">	     
+	      <span><span class="fa fa-video-camera"></span> Webcam</span>
+	      <input type='button' id="camInp" name="file" class="upload"/>
+	    </div>
+      <div class="editor" style="display: none">
+      </div>
+      <div class="toolbar" style="display: none">
+<!--     <button id="crop" title="Crop (C)" class="toolbar__button">
+          <span class="fa fa-crop"></span>
+        </button> -->
+        <button id="zoom-in" title="Zoom In (I)" class="toolbar__button">
+          <span class="fa fa-search-plus fa-lg"></span>
+        </button>
+        <button id="zoom-out" title="Zoom Out (O)" class="toolbar__button">
+          <span class="fa fa-search-minus fa-lg"></span>
+        </button>
+        <button id="rotate-left" title="Rotate Left (L)" class="toolbar__button">
+          <span class="fa fa-rotate-left fa-lg"></span>
+        </button>
+        <button id="rotate-right" title="Rotate Right (R)" class="toolbar__button">
+          <span class="fa fa-rotate-right fa-lg"></span>
+        </button>
+      </div>
+      </div>
+  </main>
+
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./js/cropper.js"></script>
+  <script type="text/javascript" src="http://leemachin.github.io/say-cheese/public/js/say-cheese.js"></script>
+  <script src="./js/fabric.js"></script>
+  <!-- <script src="http://www.nihilogic.dk/labs/canvas2image/canvas2image.js"></script> -->
+  <script src="./js/main.js"></script>
+
+</body>
+</html>
+
+
+<!-- <html> /// example for saving png using canvas2image but can be useful
+    <head>
+        <script src="http://www.nihilogic.dk/labs/canvas2image/canvas2image.js"></script>
+        <script>
+            function draw(){
+                var canvas = document.getElementById("thecanvas");
+                var ctx = canvas.getContext("2d");
+                ctx.fillStyle = "rgba(125, 46, 138, 0.5)";
+                ctx.fillRect(25,25,100,100); 
+                ctx.fillStyle = "rgba( 0, 146, 38, 0.5)";
+                ctx.fillRect(58, 74, 125, 100);
+            }
+
+            function to_image(){
+                var canvas = document.getElementById("thecanvas"); //
+                document.getElementById("theimage").src = canvas.toDataURL(); //
+                Canvas2Image.saveAsPNG(canvas);
+            }
+        </script>
+    </head>
+    <body onload="draw()">
+        <canvas width=200 height=200 id="thecanvas"></canvas>
+        <div><button onclick="to_image()">Draw to Image</button></div>
+        <image id="theimage"></image>
+    </body>
+</html> -->

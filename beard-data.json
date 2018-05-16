@@ -1,0 +1,53 @@
+{
+	"data": [{
+		"id":"candado",
+		"url": "img/candado.png",
+		"icon":"img/hungergames-icon.png", 
+		 "text": "Candado"
+	}, {
+		"id":"completa",
+		"url": "img/completa.png",
+		"icon":"img/hungergames-icon.png", 
+		 "text": "Completa"
+	}, {
+		"id":"imperial",
+		"url": "img/imperial.png",
+		"icon":"img/hungergames-icon.png", 
+		 "text": "Imperial"
+	}, {
+		"id":"moustache",
+		"url": "img/moustache.png",
+		"icon":"img/hungergames-icon.png", 
+		 "text": "Moustache"
+	}, {
+		"id":"spade",
+		"url": "img/spade.png",
+		"icon":"img/hungergames-icon.png", 
+		 "text": "Spade"
+	}, {
+		"id":"john",
+		"url": "img/john.png",
+		"icon":"img/hungergames-icon.png", 
+		 "text": "John Nilson"
+	}, {
+		"id":"galifinakis",
+		"url": "img/galifinakis.png",
+		"icon":"img/hungergames-icon.png", 
+		 "text": "Zach Galifinakis"
+	}, {
+		"id":"drhouse",
+		"url": "img/drhouse.png",
+		"icon":"img/hungergames-icon.png", 
+		 "text": "Dr. House"
+	}, {
+		"id":"justformen",
+		"url": "img/justformen.png",
+		"icon":"img/hungergames-icon.png", 
+		 "text": "Just For Men"
+	}, {
+		"id":"hungergames",
+		"url": "img/hungergames.png",
+		"icon":"img/hungergames-icon.png", 
+		 "text": "Juegos del Hambre"
+	}]
+}
